@@ -14,6 +14,17 @@ sonarqube {
     }
 }
 
+jacoco {
+    toolVersion = "0.8.9"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
 
 group = 'org.generation'
 version = '0.0.1-SNAPSHOT'
