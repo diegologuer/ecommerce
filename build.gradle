@@ -2,8 +2,16 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.15-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id 'org.sonarqube' version '4.0.0.2929'
+	id("org.sonarqube") version "4.4.1.3373"
 }
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://localhost:9000' // Replace with your SonarQube server URL
+        property 'sonar.login', 'squ_47697c06ea8b39dd19497e63d23f2008d8abdbf7' // Replace with your generated SonarQube token
+    }
+}
+
 
 group = 'org.generation'
 version = '0.0.1-SNAPSHOT'
