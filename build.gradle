@@ -2,7 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.15-SNAPSHOT'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id("org.sonarqube") version "4.4.0.2170"
+	 id "org.sonarqube" version "4.3.1.3277"
 	id 'jacoco'
 	id 'war'
 }
@@ -10,7 +10,7 @@ plugins {
 sonar {
     properties {
         property 'sonar.host.url', 'http://localhost:9000' // Replace with your SonarQube server URL
-        property 'sonar.login', 'squ_47697c06ea8b39dd19497e63d23f2008d8abdbf7' // Replace with your generated SonarQube token
+        property 'sonar.login', 'squ_d09a8dc8fe205b7d013ca8c3c41d094c19791194' // Replace with your generated SonarQube token
     }
 }
 
