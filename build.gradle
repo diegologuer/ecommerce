@@ -9,6 +9,7 @@ plugins {
 
 sonarqube {
     properties {
+	property "sonar.java.binaries", "build/classes/java/main"
         property 'sonar.host.url', 'http://localhost:9000' // Replace with your SonarQube server URL
         property 'sonar.login', 'squ_47697c06ea8b39dd19497e63d23f2008d8abdbf7' // Replace with your generated SonarQube token
     }
