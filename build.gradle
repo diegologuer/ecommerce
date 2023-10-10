@@ -19,16 +19,23 @@ jacoco {
     reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
 }
 
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
 jacocoTestReport {
-  group = "reporting"
-  description = "Generate Jacoco coverage reports after running tests."
-  reports {
-    xml.enabled true
-    html.enabled true
-    csv.enabled false
-    html.destination "${buildDir}/jacocoHtml"
-  }
-  sourceDirectories = fileTree(dir: 'src/main/java')
+        // Ruta a los archivos de código fuente de tu proyecto
+    sourceDirectories = files('src/main/java')
+
+    // Ruta a los archivos de clases compiladas
+    classDirectories = files('build/classes/java/main')
+    
+}
+jacocoTestReport {
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
 }
 
 group = 'org.generation'
